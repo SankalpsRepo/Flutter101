@@ -16,15 +16,22 @@ class RandomWordsState extends State<RandomWords> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold (                   
+    
+    return MaterialApp(
+      title: 'Startup Name Generator',
+      theme: new ThemeData(
+        primaryColor: Colors.white,
+      ),
+      home: new Scaffold (
       appBar: new AppBar(
         title: new Text('Startup Name Generator'),
         actions: <Widget>[
           new IconButton(icon: const Icon(Icons.list), onPressed: _pushSaved),
           new IconButton(icon: const Icon(Icons.list), onPressed: _pushSaved),
         ], 
-      ),
+        ),
       body: _buildSuggestions(),
+      ),
     );
   }     
   void _pushSaved() {
